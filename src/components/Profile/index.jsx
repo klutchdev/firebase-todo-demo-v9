@@ -27,8 +27,8 @@ const Profile = () => {
 
   const styles = {
     image: {
-      width: "150px",
-      height: "150px",
+      width: "100px",
+      height: "100px",
       margin: "0 auto",
       borderRadius: "50%",
       boxShadow: "1px 1px 12px #030303aa",
@@ -62,9 +62,15 @@ const Profile = () => {
       </div>
       <h4>{user.displayName}</h4>
       <h5>{user.email}</h5>
-      <BasicButton type="button" label="Sign out" onClick={logOut} />
+      <BasicButton
+        type="button"
+        label="Sign out"
+        bgColor="hsl(348, 100%, 61%)"
+        textColor="#101315"
+        onClick={logOut}
+      />
       <br />
-      <div onClick={handleClick} style={{ width: "75vw", height: "50vh" }}>
+      <div onClick={handleClick} style={{ width: "75vw", height: "100%" }}>
         <img style={{ width: "75vw", maxWidth: "75vw", height: "auto" }} src={imgUrl} alt="" />
         <input
           type="file"

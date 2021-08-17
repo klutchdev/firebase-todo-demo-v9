@@ -55,11 +55,13 @@
 
 body {
   height: 100%;
-  color: var(--white);
+  color: var(--light);
   background: var(--dark);
   font-family: var(--font-primary);
   scroll-padding-top: 1rem;
+  padding: 1rem;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h1 {
