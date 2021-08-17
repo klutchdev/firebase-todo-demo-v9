@@ -7,6 +7,7 @@ import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import useFirebaseStorage from "../../hooks/useFirebaseStorage";
 import Flex from "../Flex";
 import Backdrop from "../Backdrop";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -62,6 +63,7 @@ const Profile = () => {
       </div>
       <h4>{user.displayName}</h4>
       <h5>{user.email}</h5>
+      <Link to="/posts">View posts</Link>
       <BasicButton
         type="button"
         label="Sign out"

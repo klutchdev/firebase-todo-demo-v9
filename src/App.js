@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loader";
 import ShowError from "./components/ShowError";
 import { AuthContext } from "./contexts/AuthContext";
+import PostsPage from "./pages/PostsPage";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const SignInPage = lazy(() => import("./pages/SignInPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
@@ -21,6 +22,7 @@ const App = () => {
         <Router>
           <Switch>
             <Route component={SettingsPage} exact path="/settings" />
+            <Route component={PostsPage} path="/posts" />
             <Route component={HomePage} path="/" />
           </Switch>
         </Router>
