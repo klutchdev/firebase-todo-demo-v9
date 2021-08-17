@@ -1,13 +1,246 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+
+:root {
+  --black: #030303;
+  --black95: #030303f0;
+  --black90: #030303ee;
+  --black80: #030303cc;
+  --black70: #030303af;
+  --black60: #030303a0;
+  --black50: #03030385;
+  --black25: #03030350;
+  --black10: #03030320;
+  --dark: #101315;
+  --grey-950: #151718;
+  --grey-900: #1d2021;
+  --grey-850: #222325;
+  --grey-800: #2f3234;
+  --grey-700: #36393a;
+  --grey-600: #424748;
+  --grey-500: #5d6263;
+  --grey-400: #6b6f71;
+  --grey-300: #737779;
+  --grey-200: #9aa0a4;
+  --grey-100: #b2b7bb;
+  --grey-50: #cacfd3;
+  --light: #eeeeee;
+  --white: #fefefe;
+
+  --red: hsl(348, 100%, 61%);
+  --pink: hsl(337, 100%, 63%);
+  --blue: hsl(203, 89%, 53%);
+  --light-blue: hsl(196, 100%, 50%);
+  --green: hsl(154, 91%, 40%);
+  --light-green: hsl(144, 73%, 49%);
+  --orange: hsl(21, 95%, 62%);
+  --purple: hsl(265, 50%, 60%);
+  --yellow: hsl(53, 100%, 60%);
+
+  --border-radius: 4px;
+  --font-primary: "Montserrat";
+  --fab-shadow: var(--black80) 1px 1px 26px;
+  --banner-shadow: var(--black) 2px 2px 20px;
+  --shadow: var(--black75) 3px 5px 10px;
+  font-size: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  color: var(--white);
+  background: var(--dark);
+  font-family: var(--font-primary);
+  scroll-padding-top: 1rem;
+}
+
+h1 {
+  font-size: 2.15rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+}
+
+h3 {
+  font-size: 1.65rem;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
+h5 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--font-primary);
+}
+
+a {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+/*===================================================================//
+  Flexbox classes
+//===================================================================*/
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/*===================================================================//
+  Misc classes
+//===================================================================*/
+.fixed {
+  position: fixed;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.no-border {
+  border: none;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-100 {
+  z-index: 100;
+}
+
+.z-500 {
+  z-index: 500;
+}
+
+.z-1000 {
+  z-index: 1000;
+}
+
+.full-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+/*===================================================================//
+  Animation
+//===================================================================*/
+.rotation {
+  animation: rotation 1.2s linear infinite;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*===================================================================//
+  Components
+//===================================================================*/
+.fab {
+  margin: auto;
+  position: fixed;
+  bottom: 1rem;
+  right: 1.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 500;
+  transition: all 500ms linear;
+  box-shadow: var(--fab-shadow);
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  display: flex;
+  padding: 0;
+}
+
+/*===================================================================//
+  Media queries
+//===================================================================*/
+@media (min-width: 1024px) {
+  a:hover {
+    cursor: pointer;
+  }
 }
