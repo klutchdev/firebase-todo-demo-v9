@@ -21,7 +21,7 @@ const PostsPage = () => {
   }, []);
   return (
     <>
-      <Link to="/">Go home</Link>
+      <Link to="/profile">View profile</Link>
       <CreatePostForm />
       <br />
       <h5>{posts.length} posts</h5>
@@ -35,8 +35,8 @@ const PostsPage = () => {
               postedBy={postedBy}
               content={content}
               imageUrl={imageUrl}
-              postId={postId.toString()}
-              replies={replies.toString()}
+              postId={postId}
+              replies={replies}
               createdAt={createdAt}
             />
           );

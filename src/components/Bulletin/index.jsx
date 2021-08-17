@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Bulletin = ({ postedBy, content, imageUrl, postId, replies }) => {
   return (
     <div
@@ -13,7 +15,6 @@ const Bulletin = ({ postedBy, content, imageUrl, postId, replies }) => {
         <h4>
           <b>{postedBy} </b>
         </h4>
-        {/* <p>{createdAt.toString()}</p> */}
         <h5 style={{ marginLeft: "2rem", fontWeight: 300 }}> {postId}</h5>
       </div>
       <div className="bulletin-content">
@@ -23,8 +24,8 @@ const Bulletin = ({ postedBy, content, imageUrl, postId, replies }) => {
         </div>
       </div>
       <div style={{ display: "flex", width: "100%" }}>
-        <p style={{ padding: "0.5rem 0", marginRight: "auto " }}>{replies} replies</p>
-        <button>View thread</button>
+        <p style={{ padding: "0.5rem 0", marginRight: "auto " }}>{replies.length} replies</p>
+        <Link to={`/posts/${postId}`}>View thread </Link>
       </div>
     </div>
   );

@@ -109,7 +109,7 @@ const ProgressLoader = ({ file, setFile, content, setLoading }) => {
         postedBy: displayName,
         content: content,
         imageUrl: url,
-        replies: 0,
+        replies: [],
         createdAt: timestamp,
       })
         .catch((err) => {

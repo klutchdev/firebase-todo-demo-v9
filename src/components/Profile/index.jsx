@@ -63,7 +63,9 @@ const Profile = () => {
       </div>
       <h4>{user.displayName}</h4>
       <h5>{user.email}</h5>
-      <Link to="/posts">View posts</Link>
+      <br />
+      <Link to="/">View posts</Link>
+      <br />
       <BasicButton
         type="button"
         label="Sign out"

@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loader";
 import ShowError from "./components/ShowError";
 import { AuthContext } from "./contexts/AuthContext";
-import PostsPage from "./pages/PostsPage";
+const PostPage = lazy(() => import("./pages/PostPage"));
+const PostsPage = lazy(() => import("./pages/PostsPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const SignInPage = lazy(() => import("./pages/SignInPage"));
-const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+// const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
 const App = () => {
   const { user, loading, error } = useContext(AuthContext);
@@ -21,9 +22,9 @@ const App = () => {
       <Suspense fallback={<Loading />}>
         <Router>
           <Switch>
-            <Route component={SettingsPage} exact path="/settings" />
-            <Route component={PostsPage} path="/posts" />
-            <Route component={HomePage} path="/" />
+            <Route exact path="/posts/:postId" render={(props) => <PostPage {...props} />} />
+            <Route component={HomePage} exact path="/profile" />
+            <Route component={PostsPage} path="/" />
           </Switch>
         </Router>
       </Suspense>
