@@ -60,8 +60,8 @@ const Profile = () => {
       <div style={styles.wrapper}>
         <img style={styles.image} src={user.photoURL} alt="" />
       </div>
-      <h5>{user.displayName}</h5>
-      <h3>{user.email}</h3>
+      <h4>{user.displayName}</h4>
+      <h5>{user.email}</h5>
       <BasicButton type="button" label="Sign out" onClick={logOut} />
       <br />
       <div onClick={handleClick} style={{ width: "75vw", height: "50vh" }}>
