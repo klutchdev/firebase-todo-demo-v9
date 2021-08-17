@@ -65,7 +65,7 @@ const Profile = () => {
       <BasicButton type="button" label="Sign out" onClick={logOut} />
       <br />
       <div onClick={handleClick} style={{ width: "75vw", height: "50vh" }}>
-        <img src={imgUrl} alt="" />
+        <img style={{ width: "75vw", maxWidth: "75vw", height: "auto" }} src={imgUrl} alt="" />
         <input
           type="file"
           name="file"
